@@ -1,0 +1,25 @@
+{
+  "name": "ma2-macro",
+  "displayName": "Ma2 macro",
+  "description": "Syntax highlight for ma2 macro files",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "ma2-macro",
+      "aliases": ["GrandMA2 macro", "ma2-macro"],
+      "extensions": [".ma2macro"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "ma2-macro",
+      "scopeName": "source.ma2-macro",
+      "path": "./syntaxes/ma2-macro.tmLanguage.json"
+    }]
+  }
+}

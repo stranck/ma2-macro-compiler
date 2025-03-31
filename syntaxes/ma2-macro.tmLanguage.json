@@ -1,0 +1,227 @@
+{
+  "scopeName": "source.ma2-macro",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#function"
+    },
+    {
+      "include": "#commands"
+    },
+		{
+			"include": "#strings"
+		}
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.ma2-macro",
+          "begin": "//",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.ma2-macro"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "match": ".*",
+              "name": "comment.line.double-slash.content.ma2-macro"
+            }
+          ]
+        },
+        {
+          "name": "comment.line.hash.ma2-macro",
+          "begin": "#",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.ma2-macro"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "match": ".*",
+              "name": "comment.line.hash.content.ma2-macro"
+            }
+          ]
+        }
+      ]
+    },
+    "function": {
+      "patterns": [
+        {
+          "name": "entity.name.function.ma2-macro",
+          "begin": "_macro\\s+\"",
+          "beginCaptures": {
+            "0": {
+              "name": "keyword.control.function.ma2-macro"
+            }
+          },
+          "end": "\"\\s*\\{",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.function.begin.ma2-macro"
+            }
+          },
+          "patterns": [
+            {
+              "match": "[^\"]+",
+              "name": "entity.name.function.name.ma2-macro"
+            }
+          ]
+        },
+        {
+          "name": "entity.name.function.no-quotes.ma2-macro",
+          "begin": "_macro\\s+",
+          "beginCaptures": {
+            "0": {
+              "name": "keyword.control.function.ma2-macro"
+            }
+          },
+          "end": "\\s*\\{",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.function.begin.ma2-macro"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\\S+",
+              "name": "entity.name.function.name.ma2-macro"
+            }
+          ]
+        }
+      ]
+    },
+    "commands": {
+      "patterns": [
+        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(<<<|>>>|AddUserVar|AddVar|Agenda|Alert|Align|AlignFaderModules)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(All|AllButtonExecutors|AllChaseExecutors|AllFaderExecutors|AllRows|AllSequExecutors|And|Appearance|Assign|At)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(Attribute|AutoCreate|Backup|Black|Blackout|BlackScreen|Blind|BlindEdit|Block|ButtonPage)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(Call|Camera|ChangeDest|Channel|ChannelFader|ChannelLink|ChannelPage|Chat|CircularCopy|Clear|ClearActive)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(ClearAll|ClearSelection|Clone|CmdDelay|CmdHelp|Copy|CrashLogCopy|CrashLogDelete|CrashLogList|Crossfade|CrossfadeA)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(CrossfadeB|Cue|Cut|Default|DefGoBack|DefGoForward|DefGoPause|Delay|Delete|DeleteShow|DisconnectStation)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(Dmx|DmxUniverse|DoubleRate|DoubleSpeed|Down|DropControl|Edit|Effect|EffectAttack)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(EffectBPM|EffectDecay|EffectDelay|EffectFade|EffectForm|EffectHigh|EffectHZ|EffectID|EffectLow|EffectPhase|EffectSec)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(EffectSpeedGroup|EffectWidth|Empty|EndIf|EndSession|Escape|ExecButton1|ExecButton2|ExecButton3|Executor|Exit)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(Export|Extract|Fade|FadePath|Fader|FaderPage|Feature|Filter|Fix|Fixture|FixtureType)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(Flash|FlashGo|FlashOn|Flip|Form|Freeze|Full|FullHighlight|Gel|Go|GoBack)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(Goto|Group|HalfRate|HalfSpeed|Help|Highlight|IdentifyFaderModule|If|IfActive|IfOutput|IfProg)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(Image|Import|Info|Insert|Interleave|Invert|InviteStation|Item3D|JoinSession|Kill|Label)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(Layer|Layout|Learn|LeaveSession|List|ListEffectLibrary|ListFaderModules|ListLibrary|ListMacroLibrary|ListOops|ListOwner)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(ListPluginLibrary|ListShows|ListUpdate|ListUserVar|ListVar|Load|LoadNext|LoadPrev|LoadShow|Locate|Lock)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(Login|Logout|Lua|Macro|ManualXFade|Mask|Master|MasterFade|MAtricks|MAtricksBlocks|MAtricksFilter)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(MAtricksGroups|MAtricksInterleave|MAtricksReset|MAtricksWings|MediaServer|Menu|Messages|Message|MidiControl|MidiNote|MidiProgram)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(Model|Move|Move3D|NetworkInfo|NetworkNodeInfo|NetworkNodeUpdate|NetworkSpeedTest|NewShow|Next|NextRow|Normal)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(Off|On|Oops|Or|OutDelay|OutFade|Page|Park|Part|Paste)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(Pause|Plugin|PMArea|Preset|PresetType|Preview|PreviewEdit|PreviewExecutor|Previous|PrevRow|Profile)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(Protocol|PSR|PSRList|PSRPrepare|Rate|Rate1|RdmAutomatch|RdmAutopatch|RdmFixtureType|RdmInfo)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(RdmList|RdmSetParameter|RdmSetpatch|RdmUnmatch|Reboot|Record|Release|ReloadPlugins|Remote|RemoteCommand|Remove)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(RemoveIndividuals|Replace|ResetDmxSelection|ResetGuid|Restart|Root|Rotate3D|SaveShow|Screen|Search|SearchResult)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(Select|SelectDrive|Selection|SelFix|Sequence|SetHostname|SetIP|SetNetworkSpeed|Setup|SetUserVar)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(SetVar|ShuffleSelection|ShuffleValues|Shutdown|SnapPercent|Solo|SpecialMaster|Speed|StepFade)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(StepInFade|StepOutFade|Stomp|Store|StoreLook|Surface|Swop|SwopGo|SwopOn|SyncEffects|TakeControl)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(Telnet|Temp|TempFader|Thru|Timecode|TimecodeSlot|Timer|ToFull|Toggle|Tools|Top)\\b"
+        },        {
+          "name": "keyword.other.command.ma2-macro",
+          "match": "\\b(ToZero|Unblock|Unlock|Unpark|Up|Update|UpdateFirmware|UpdateSoftware|UpdateThumbnails|User|UserProfile)\\b"
+        },
+        {
+          "name": "string.quoted.double.ma2-macro",
+          "begin": "\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.ma2-macro"
+            }
+          },
+          "end": "\"",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.ma2-macro"
+            }
+          },
+          "patterns": [
+            {
+              "match": "[^\"]+",
+              "name": "string.quoted.double.content.ma2-macro"
+            }
+          ]
+        },
+        {
+          "name": "constant.numeric.float.ma2-macro",
+          "match": "\\\b\\d+\\.\\d+\\\b"
+        },
+        {
+          "name": "constant.numeric.integer.ma2-macro",
+          "match": "\\\b\\d+\\\b"
+        },
+        {
+          "name": "entity.name.class.token.ma2-macro",
+          "match": "!\\d+\\.\\d+"
+        },
+        {
+          "name": "variable.other.ma2-macro",
+          "match": "\\$[A-Za-z_][A-Za-z0-9_]*"
+        }
+      ]
+    }
+  }
+}
