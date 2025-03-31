@@ -14,7 +14,7 @@ class MacroLine:
 	
 	def fromXml(tag: Tag):
 		line = MacroLine()
-		line.lineNo = tag.get("index")
+		line.lineNo = int(tag.get("index"))
 		if (tag.has_attr("delay")):
 			line.delay = float(tag.get("delay"))
 		if (tag.has_attr("disabled")):
