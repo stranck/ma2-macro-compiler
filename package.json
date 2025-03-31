@@ -1,8 +1,8 @@
 {
   "name": "ma2-macro",
-  "displayName": "Ma2 macro",
+  "displayName": "GrandMa2 macro syntax highlight",
   "description": "Syntax highlight for ma2 macro files",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.98.0"
   },
@@ -21,5 +21,19 @@
       "scopeName": "source.ma2-macro",
       "path": "./syntaxes/ma2-macro.tmLanguage.json"
     }]
-  }
+  },
+  "keywords": [
+    "ma2",
+    "grandma2",
+    "ma-lighting",
+    "macro",
+    "lighting",
+    "syntax highlight"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stranck/ma2-macro-compiler.git"
+  },
+  "icon": "images/ma2logo.png",
+  "publisher": "stranck"
 }

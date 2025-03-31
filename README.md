@@ -8,7 +8,7 @@ Just run `pip install beautifulsoup4 lxml argparse` in your venv/python installa
 
 # VsCode extension installation
 
-TODO
+Just install it from: https://marketplace.visualstudio.com/items?itemName=stranck.ma2-macro
 
 # Usage
 
@@ -33,20 +33,24 @@ Example code:
 _macro "Create odd group" {
 	# +++++ FRONT +++++
 	ClearAll
-    Group "Spot group"
+	Group "Spot group"
 	MAtricks "Odd" //Selects only the first half of the lights
 	Store Group "Spot group - odd" /o
 	MAtricks "Reset" !0.25 //We wait a bit to be sure the store is successful
-    ClearAll !0.25
+	ClearAll !0.25
 }
 
 _macro "Create even group" {
 	# +++++ FRONT +++++
 	ClearAll
-    Group 20
+	Group 20
 	MAtricks "Even" //Selects instead the second half of the lights
 	Store Group "Spot group - even" /o
 	MAtricks 1 !0.25 //We wait a bit to be sure the store is successful
-    ClearAll !0.25
+	ClearAll !0.25
 }
 ```
+
+# Important note
+
+I wrote the python script in one hour while bored during uni. It WILL break, specially on complex macros. Don't judge me plz and don't ask rudely for fixes. Talk is cheap, send patches
