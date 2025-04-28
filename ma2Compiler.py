@@ -47,7 +47,7 @@ class MacroLine:
 		if (text.startswith("#")):
 			text = text[1:]
 			line.disabled = True
-		line.text = text
+		line.text = text.strip()
 		return line
 	
 	def toXml(self, soup: BeautifulSoup) -> Tag:
@@ -112,7 +112,7 @@ def compile(fileName: str) -> str:
 	with open(fileName, 'r') as f:
 		data = f.readlines()
 	baseXml = f'<MA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.malighting.de/grandma2/xml/MA" xsi:schemaLocation="http://schemas.malighting.de/grandma2/xml/MA http://schemas.malighting.de/grandma2/xml/3.9.60/MA.xsd" major_vers="3" minor_vers="9" stream_vers="60"><Info datetime="{datetime.datetime.now().replace(microsecond=0).isoformat()}" showfile="" /></MA>'
-	macroFile = BeautifulSoup(baseXml, "xml")
+	macroFile = BeautifulSoup(baseXml, "xml", preserve_whitespace_tags=["text", "info"])
 	maTag = macroFile.find("MA")
 	macroLine = 0
 	macroIndex = 0
